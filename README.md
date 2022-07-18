@@ -17,3 +17,4 @@ See the ipv4 address of your hotspot opening network and sharing in windows.
 
 Change server and client's ip address according to your hotspot. Then run.
 If the application gives error please change port number in the application.
+![Screenshot (25)](https://user-images.githubusercontent.com/104995038/179608549-116a7dd5-9890-4810-8e6f-ab51789baac4.png)
