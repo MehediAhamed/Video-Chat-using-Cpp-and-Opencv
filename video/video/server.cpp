@@ -41,7 +41,7 @@ int main()
 
 
 
-	const char* ip = "192.168.163.54";
+	const char* ip = "127.0.0.1";
 	int port = 8080;
 	int e;
 
