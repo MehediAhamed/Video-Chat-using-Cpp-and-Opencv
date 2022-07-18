@@ -12,10 +12,7 @@
 #include<opencv2/video/background_segm.hpp>
 #include<opencv2\video\tracking.hpp>
 
-#include<SFML/Network.hpp>
-#include<SFML/Audio.hpp>
-#include <SFML/System.hpp>
-#include<Windows.h>
+
 
 #pragma warning(disable:4996)
 #pragma comment(lib, "ws2_32.lib")
@@ -36,7 +33,7 @@ int main()
 {
 
 
-	String ipAddress = "192.168.163.54";			// IP Address of the server
+	String ipAddress = "127.0.0.1";			// IP Address of the server
 	int port =8080;						// Listening port # on the server
 
 	// Initialize WinSock
@@ -66,12 +63,13 @@ int main()
 
 	// Connect to server
 	int connResult = connect(sock, (sockaddr*)&hint, sizeof(hint));
-	if (connResult == SOCKET_ERROR)
+	while (connResult == SOCKET_ERROR)
 	{
 		std::cerr << "Can't connect to server, Err #" << WSAGetLastError() << std::endl;
-		closesocket(sock);
-		WSACleanup();
-		//return;
+		connResult = connect(sock, (sockaddr*)&hint, sizeof(hint));
+		if (connResult != SOCKET_ERROR)
+			break;
+		
 	}
 	std::cerr << "connected to server" << std::endl;
 
@@ -158,6 +156,7 @@ int main()
 
 			if ((bytes = recv(sock,(char*)iptr, imgSize, MSG_WAITALL)) == -1) {
 				std::cerr << "recv failed, received bytes = " << bytes << std::endl;
+
 			}
 
 			cv::imshow("CV Video Client", img);
