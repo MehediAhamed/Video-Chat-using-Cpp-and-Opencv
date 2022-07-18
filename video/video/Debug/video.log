@@ -1,0 +1,4 @@
+﻿  server.cpp
+D:\qt5\Practice\videocall\video\video\server.cpp(46,6): warning C4101: 'e': unreferenced local variable
+D:\qt5\Practice\videocall\video\video\server.cpp(180,6): warning C4101: 'key': unreferenced local variable
+  video.vcxproj -> D:\qt5\Practice\videocall\video\Debug\video.exe
