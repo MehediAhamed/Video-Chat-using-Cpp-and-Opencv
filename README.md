@@ -1,6 +1,6 @@
 # Video-Chat-using-Cpp-and-Opencv
 
-1. Download and install visual studio community.
+1.Download and install visual studio community.
 
 2.Install vcpkg.
 
